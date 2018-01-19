@@ -1,0 +1,70 @@
+.site-nav {
+  @media screen and (max-width: 991px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 60%;
+    height: 100vh;
+    padding: 0;
+    background: white;
+    border-bottom: 1px solid $gray-lighter;
+    z-index: $zindex-5;
+    overflow: auto;
+  }
+}
+
+.menu {
+  @media screen and (max-width: 991px) {
+    text-align: center;
+  }
+  +desktop() {
+    display: inline-block;
+    float: right;
+  }
+}
+.menu .menu-item {
+  @media screen and (max-width: 991px) {
+    display: block;
+    margin: 0 10px;
+    vertical-align: top;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 1px 4px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $gainsboro;
+    +mobile() {
+      float: right;
+      margin: 0.35em 0 0 0;
+    }
+  }
+
+  br {
+    @media screen and (max-width: 991px) { display: none; }
+  }
+
+  a {
+    &:hover {
+      border-color: $link-hover-color;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 5px 10px;
+      border: none;
+    }
+  }
+  .fa { margin-right: 0; }
+}
+
+.menu-item-active a {
+  border-bottom-color: $menu-link-hover-border !important;
+  color: $black-deep;
+
+  @media screen and (max-width: 991px) {
+    border-bottom-color: white !important;
+  }
+}

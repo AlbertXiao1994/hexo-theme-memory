@@ -1,0 +1,199 @@
+.custom-post {
+  margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.post-body {
+  font-family: $font-family-posts;
+  +mobile() {
+    word-break: break-word;
+  }
+}
+
+.post-body .fancybox img {
+  display: block !important;
+  margin: 0 auto;
+  cursor: pointer;
+  cursor: zoom-in;
+  cursor: -webkit-zoom-in;
+}
+
+.post-body .image-caption {
+  margin: -20px auto 15px;
+  text-align: center;
+  font-size: $font-size-base;
+  color: $grey-dark;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.post-body .figure .caption {
+  @extend .post-body .image-caption;
+}
+
+.post-sticky-flag {
+  display: inline-block;
+  font-size: 16px;
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.use-motion {
+  if hexo-config('motion.transition.post_block') {
+    .post-block,
+    .pagination,
+    .comments { opacity: 0; }
+  }
+  if hexo-config('motion.transition.post_header') { .post-header { opacity: 0; } }
+  if hexo-config('motion.transition.post_body') { .post-body { opacity: 0; } }
+  if hexo-config('motion.transition.coll_header') { .collection-title { opacity: 0; } }
+}
+
+.post-block-home {
+  box-shadow: 0 0 10px rgba(202,203,203,.6);
+  border-radius: 10px;
+  +desktop() {
+    height: 250px;
+    padding: 30px;
+  }
+  +tablet() {
+    height: 250px;
+    padding: 30px;
+  }
+  &:hover {
+    box-shadow: 0 0 15px rgba(202,203,203,.8);
+  }
+}
+
+.post-block-home .post-sub-content {
+  box-sizing: border-box;
+  +desktop() {
+    width: 45%;
+  }
+  +tablet() {
+    width: 45%;
+  }
+  +mobile() {
+    width: 100%;
+    padding: 20px;
+  }
+  .post-title {
+    margin-top: 0;
+    font-weight: 700;
+    +mobile() {
+      text-align: left;
+    }
+  }
+  .post-meta {
+    margin-bottom: 10px;
+    +mobile() {
+      text-align: left;
+    }
+  }
+  .post-button {
+    +mobile() {
+      display: none;
+    }
+  }
+}
+
+.custom-post:nth-child(odd) {
+  .post-sub-content {
+    +desktop() {
+      float: right;
+      padding-left: 30px;
+    }
+    +tablet() {
+      float: right;
+      padding-left: 30px;
+    }
+  }
+  .post-sub-img {
+    +desktop() {
+      float: left;
+    }
+    +tablet() {
+      float: left;
+    }
+  }
+  .post-button, .post-title, .post-meta {
+    +desktop() {
+      text-align: right;
+    }
+    +tablet() {
+      text-align: right;
+    }
+  }
+}
+
+.custom-post:nth-child(even) {
+  .post-sub-content {
+    +desktop() {
+      float: left;
+      padding-right: 30px;
+    }
+    +tablet() {
+      float: left;
+      padding-right: 30px;
+    }
+  }
+  .post-sub-img {
+    +desktop() {
+      float: right;
+    }
+    +tablet() {
+      float: right;
+    }
+  }
+  .post-button, .post-title, .post-meta {
+    +desktop() {
+      text-align: left;
+    }
+    +tablet() {
+      text-align: left;
+    }
+  }
+}
+
+.post-block-home .post-sub-img {
+  +desktop() {
+    width: 55%;
+  }
+  +tablet() {
+    width: 55%;
+  }
+  +mobile() {
+    width: 100%;
+  }
+  .post-img-link {
+    display: block;
+    border-radius: 10px;
+    height: 250px;
+    outline: none;
+    text-decoration: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.5s;
+    &:hover {
+      background-size: 130% 130%;
+    }
+  }
+}
+
+@import "post-expand";
+@import "post-collapse";
+@import "post-type";
+@import "post-title";
+@import "post-meta";
+@import "post-button";
+@import "post-tags";
+@import "post-nav";
+@import "post-eof";
+@import "post-gallery";
+@import "post-reward" if hexo-config('alipay') or hexo-config('wechatpay') or hexo-config('bitcoin');
+@import "post-copyright" if hexo-config('post_copyright.enable');
+@import "post-widgets" if (hexo-config('facebook_sdk.enable') and hexo-config('facebook_sdk.like_button')) or (hexo-config('vkontakte_api.enable') and hexo-config('vkontakte_api.like')) or hexo-config('rating.enable') or (hexo-config('needmoreshare2.enable') and hexo-config('needmoreshare2.postbottom.enable'));
+@import "post-rtl";
+@import "post-reading_progress" if hexo-config('reading_progress.enable');

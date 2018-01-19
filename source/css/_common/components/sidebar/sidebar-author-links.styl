@@ -1,0 +1,34 @@
+.links-of-author {
+  margin-top: 10px;
+}
+
+.links-of-author-item {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  &:hover {
+    background: rgba(255,255,255,0.9);
+  }
+  img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px;
+    border-radius: 50%;
+  }
+}
+
+.links-of-author a {
+  font-size: 20px;
+  line-height: 25px;
+  border: none;
+  &[title="weibo"] {
+    color: #E44949;
+  }
+  &[title="GitHub"] {
+    color: #000;
+  }
+}

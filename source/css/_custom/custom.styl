@@ -1,0 +1,47 @@
+// Custom styles.
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+} /* 这是针对缺省样式 (必须的) */
+
+::-webkit-scrollbar-track {
+      background-color: #fff;
+} /* 滚动条的滑轨背景颜色 */
+
+::-webkit-scrollbar-thumb {
+  background-color: #ACAAAA;
+  border-radius: 2.5px;
+} /* 滑块颜色 */
+
+.custom-post-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  margin: 0 auto;
+  color: $whitesmoke;
+  max-width: $content-desktop;
+  a {
+    color: $whitesmoke;
+  }
+  a:hover {
+    color: $link-hover-color;
+    border-color: $link-hover-color;
+  }
+  .post-title {
+    font-size: 30px;
+  }
+  +mobile() {
+    padding-left: 10px;
+  }
+}
+
+.custom-page-title {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 30px;
+  color: $whitesmoke;
+}

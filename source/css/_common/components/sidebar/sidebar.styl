@@ -1,0 +1,18 @@
+.site-overview {
+  color: $grey-dark;
+  text-align: center;
+  overflow: hidden;
+  +desktop() {
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    padding-top: 20px;
+  }
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@import "sidebar-author";
+@import "site-state";
+@import "sidebar-author-links";
