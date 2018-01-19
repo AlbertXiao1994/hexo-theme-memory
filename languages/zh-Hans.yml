@@ -22,11 +22,11 @@ sidebar:
   toc: 文章目录
 
 post:
-  created: 创建于
-  modified: 更新于
+  created: 创建
+  modified: 更新
   sticky: 置顶
-  posted: 发表于
-  in: 分类于
+  posted: 发表
+  in: 分类
   read_more: 阅读全文
   untitled: 未命名
   toc_empty: 此文章未包含目录
