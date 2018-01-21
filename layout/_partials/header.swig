@@ -67,7 +67,7 @@
               </span>
             {% endfor %}
             <span class="links-of-author-item">
-              <a href="" target="_blank" title="zhihu"><img src="/images/zhihu.png"></a>
+              <a href="https://www.zhihu.com/people/zjc-yuyi" target="_blank" title="zhihu"><img src="/images/zhihu.png"></a>
             </span>
           </div>
         {% endif %}
@@ -148,7 +148,7 @@
 
           {# LeanCould PageView #}
           {% if theme.leancloud_visitors.enable %}
-             <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+             <span id="{{ url_for(page.path) }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>

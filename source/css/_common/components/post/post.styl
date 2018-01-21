@@ -102,11 +102,11 @@
   .post-sub-content {
     +desktop() {
       float: right;
-      padding-left: 30px;
+      padding-left: 20px;
     }
     +tablet() {
       float: right;
-      padding-left: 30px;
+      padding-left: 20px;
     }
   }
   .post-sub-img {
@@ -131,11 +131,11 @@
   .post-sub-content {
     +desktop() {
       float: left;
-      padding-right: 30px;
+      padding-right: 20px;
     }
     +tablet() {
       float: left;
-      padding-right: 30px;
+      padding-right: 20px;
     }
   }
   .post-sub-img {
@@ -169,15 +169,23 @@
   .post-img-link {
     display: block;
     border-radius: 10px;
-    height: 250px;
     outline: none;
     text-decoration: none;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 0.5s;
-    &:hover {
-      background-size: 130% 130%;
+    +desktop() {
+      height: 250px;
+      &:hover {
+        background-size: 130% 130%;
+      }
+    }
+    +tablet() {
+      height: 250px;
+    }
+    +mobile() {
+      height: 200px;
     }
   }
 }

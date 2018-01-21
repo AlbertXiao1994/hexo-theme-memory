@@ -1,7 +1,15 @@
 // Custom styles.
 // 滚动条样式
 ::-webkit-scrollbar {
-  width: 6px;
+  +desktop() {
+    width: 6px;
+  }
+  +tablet() {
+    width: 6px;
+  }
+  +mobile() {
+    width: 0;
+  }
 } /* 这是针对缺省样式 (必须的) */
 
 ::-webkit-scrollbar-track {
