@@ -25,7 +25,12 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20px;
+  @media screen and (min-width: 767px) {
+    bottom: 20px;
+  }
+  +mobile() {
+    bottom: 10px;
+  }
   margin: 0 auto;
   color: $whitesmoke;
   max-width: $content-desktop;
@@ -37,7 +42,12 @@
     border-color: $link-hover-color;
   }
   .post-title {
-    font-size: 30px;
+    @media screen and (min-width:767px) {
+      font-size: 30px;
+    }
+    +mobile() {
+      font-size: 20px;
+    }
   }
   +mobile() {
     padding-left: 10px;

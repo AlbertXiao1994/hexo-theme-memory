@@ -98,7 +98,7 @@
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
-              <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished" datetime="{{ moment(page.date).format() }}">{#
+              <time title="{{ __('post.created') }}" class="post-meta-item-time" itemprop="dateCreated datePublished" datetime="{{ moment(page.date).format() }}">{#
               #}{{ date(page.date, config.date_format) }}{#
             #}</time>
             {% endif %}
@@ -323,7 +323,7 @@
     </div>
   {% endif %}
 
-  <div class="nav-dimmer">
-    <div class="nav-close">X</div>
-  </div>
 </nav>
+
+<div class="nav-dimmer">
+</div>

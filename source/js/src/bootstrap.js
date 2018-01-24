@@ -22,6 +22,8 @@ $(document).ready(function () {
     var isSiteNavOn = $siteNav.hasClass(ON_CLASS_NAME);
     var display = isSiteNavOn ? 'none' : 'block';
     var overflow = isSiteNavOn ? 'auto' : 'hidden';
+    var navPos = isSiteNavOn ? '-100vw' : '0';
+    var opacity = isSiteNavOn ? '0' : '1';
     var height = isSiteNavOn ? 'auto' : window.innerHeight + 'px';
     var animateAction = isSiteNavOn ? 'slideUp' : 'slideDown';
     var animateCallback = isSiteNavOn ? 'removeClass' : 'addClass';
@@ -31,22 +33,31 @@ $(document).ready(function () {
     var $body = $('body');
     var $container = $('.container');
 
-    $siteNav.stop()[animateAction]('fast', function () {
+    if (!isSiteNavOn) {
+      $overview.css({'display':display});
+      $navDimmer[animateCallback]('nav-dimmer-on');
+    }
+    $siteNav.animate({left: navPos}, 600, function() {
       $siteNav[animateCallback](ON_CLASS_NAME);
+      $overview.css({'display':display});
     });
 
-    $navDimmer.stop()[animateAction]('fast', function () {
-      $navDimmer[animateCallback](ON_CLASS_NAME);
+    $navDimmer.animate({opacity: opacity}, 600, function() {
+      $navDimmer[animateCallback]('nav-dimmer-on');
     });
 
-    // $navDimmer.css({'display':display});
-    $overview.css({'display':display});
     $html.css({'overflow':overflow});
     $body.css({'overflow':overflow});
     $container.css({'height':height});
   });
 
-  $('.nav-dimmer .nav-close').on('click', function () {
+  window.onresize = function() {
+    if (window.innerWidth > 991) {
+      $('.site-nav').removeAttr('style');
+    }
+  }
+
+  $('.nav-dimmer').on('click', function () {
     $('.site-nav-toggle button').trigger('click');
   });
 
